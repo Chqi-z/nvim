@@ -112,6 +112,7 @@ return {
 		end,
 	},
 
+	-- TODO:
 	-- auto pairs
 	{
 		"echasnovski/mini.pairs",
@@ -121,6 +122,7 @@ return {
 		end,
 	},
 
+	-- TODO:
 	-- surround
 	{
 		"echasnovski/mini.surround",
@@ -159,21 +161,30 @@ return {
 		end,
 	},
 
+	-- TODO: comments
 	-- comments
-	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+	-- { "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
+	-- {
+	-- 	"echasnovski/mini.comment",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		hooks = {
+	-- 			pre = function()
+	-- 				require("ts_context_commentstring.internal").update_commentstring({})
+	-- 			end,
+	-- 		},
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		require("mini.comment").setup(opts)
+	-- 	end,
+	-- },
 	{
-		"echasnovski/mini.comment",
+		"numToStr/Comment.nvim",
 		event = "VeryLazy",
-		opts = {
-			hooks = {
-				pre = function()
-					require("ts_context_commentstring.internal").update_commentstring({})
-				end,
-			},
-		},
-		config = function(_, opts)
-			require("mini.comment").setup(opts)
-		end,
+    config = function ()
+      require("Comment").setup()
+      
+    end
 	},
 
 	-- better text-objects
