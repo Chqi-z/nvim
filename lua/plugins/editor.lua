@@ -244,6 +244,7 @@ return {
 			local mappings = {
 				-- 	["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
 				["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle" },
+        ["o"] = { "<cmd>ClangdSwitchSourceHeader<cr>", "switch header file/source file"}
 				-- 	["o"] = { "<cmd>AerialToggle<cr>", "Toggle Outline" },
 				-- 	["s"] = {
 				-- 		name = "Split Window",
