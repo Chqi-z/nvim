@@ -63,6 +63,9 @@ return {
 				-- end,
 				-- Specify * to use this function as a fallback for any server
 				-- ["*"] = function(server, opts) end,
+        clangd = function(_, opts)
+          opts.capabilities.offsetEncoding = { "utf-16" }
+        end
 			},
 		},
 		---@param opts PluginLspOpts
@@ -144,6 +147,9 @@ return {
 					-- nls.builtins.formatting.prettierd,
 					nls.builtins.formatting.stylua,
 					nls.builtins.diagnostics.flake8,
+					nls.builtins.formatting.black,
+          -- nls.builtins.diagnostics.cspell,
+          -- nls.builtins.code_actions.cspell
 				},
 			}
 		end,
