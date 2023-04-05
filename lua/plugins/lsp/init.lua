@@ -148,6 +148,7 @@ return {
 					nls.builtins.formatting.stylua,
 					nls.builtins.diagnostics.flake8,
 					nls.builtins.formatting.black,
+          nls.builtins.formatting.clang_format,
           -- nls.builtins.diagnostics.cspell,
           -- nls.builtins.code_actions.cspell
 				},
