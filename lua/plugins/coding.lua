@@ -181,10 +181,9 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		event = "VeryLazy",
-    config = function ()
-      require("Comment").setup()
-      
-    end
+		config = function()
+			require("Comment").setup()
+		end,
 	},
 
 	-- better text-objects
@@ -255,6 +254,25 @@ return {
 					a = a,
 				})
 			end
+		end,
+	},
+	-- aerial
+	{
+		"stevearc/aerial.nvim",
+		event = "VeryLazy",
+		opts = {
+			keymaps = {
+				["<C-j>"] = "actions.down_and_scroll",
+				["<C-k>"] = "actions.up_and_scroll",
+			},
+		},
+		config = function(_, opts)
+			require("aerial").setup({
+				on_attach = function(bufnr)
+					vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+					vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+				end,
+			})
 		end,
 	},
 }
